@@ -51,7 +51,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
   GitHub Repository: https://github.com/MichaelMure/WalletGenerator.net
   -->
 
-  <title>WalletGenerator.net - Universal Paper wallet generator for Bitcoin and other cryptocurrencies</title>
+  <title>Tavonni Paper Wallet Generator</title>
 
   <script type="text/javascript">
 // Array.prototype.map function is in the public domain.
@@ -9472,9 +9472,9 @@ h1 { margin: 0px; height: 91px; }
 #paperarea .keyarea { border: 1px solid #BFBFBF; border-top: 0; }
 #paperarea .keyarea.art { display: block; height: auto; border: 0; font-family: Ubuntu, Arial; padding: 0; margin: 0; }
 #paperarea .artwallet .papersvg { width: 1004px; height: 426px; border: 0; margin: 0; padding: 0; left: 0; }
-#paperarea .artwallet .qrcode_public { top: 263px; left: 780px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
+#paperarea .artwallet .qrcode_public { top: 235px; left: 725px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
                                     padding: 5px 5px 2px 5px; }
-#paperarea .artwallet .qrcode_private { top: 37px; right: 446px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
+#paperarea .artwallet .qrcode_private { top: 65px; right: 800px; z-index: 100; margin: 0; float: none; display: block; position: absolute; background-color: #FFFFFF;
                                     padding: 5px 5px 2px 5px;
                                     -ms-transform: rotate(180deg); /* IE 9 */
                     -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
@@ -9484,8 +9484,8 @@ h1 { margin: 0px; height: 91px; }
 .errorMsg { color: red; text-align: center !important; width: 100% !important; padding-top: 15px !important; }
 #paperarea .artwallet .btcaddress
 {
-  position: absolute; bottom: 88px; left: 874px; z-index: 100; font-size: 11px; background-color: transparent;
-  font-weight: 100; color: #000000; margin: 0; width: 124px; height: 32px; text-align: center;
+  position: absolute; bottom: 112px; left: 810px; z-index: 100; font-size: 11px; background-color: transparent;
+  font-weight: 600; color: #000000; margin: 0; width: 124px; height: 32px; text-align: center;
     word-wrap: break-word; font-family: Courier, monospace;
     -ms-transform: rotate(-90deg); /* IE 9 */
   -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
@@ -9493,12 +9493,10 @@ h1 { margin: 0px; height: 91px; }
 }
 #paperarea .artwallet .btcprivwif
 {
-  position: absolute; top: 86px; right: 540px; z-index: 100; font-size: 11px; background-color: transparent;
-  font-weight: 100; color: #000000; margin: 0; width: 124px; height: 32px; text-align: center;
+  position: absolute; top: 193px; right: 800px; z-index: 100; font-size: 11px; background-color: transparent;
+  font-weight: 600; color: #000000; margin: 0; width: 124px; height: 32px; text-align: center;
     word-wrap: break-word;
-  -ms-transform: rotate(90deg); /* IE 9 */
-  -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-  transform: rotate(90deg);
+
     font-family: Courier, monospace;
 }
 #paperarea .artwallet .btcencryptedkey
@@ -9571,7 +9569,7 @@ h1 { margin: 0px; height: 91px; }
 #currencyddl { margin: 20px; position: absolute; right: 0; top: 60px; width: 320px; font-size: 14px; }
 #currencyddl select { font-size: 14px; }
 
-.banner { font-size: 46px; text-shadow: 1px 1px 3px #000; color: #FF9547; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); text-align: left; position: relative; }
+.banner { font-size: 22px; text-shadow: 1px 1px 3px #000; color: #FF9547; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); text-align: left; position: relative; }
 
 #donateqrcode { padding: 8px; position: absolute; left: 550px; margin: 25px; border: black solid 1px; background-color: white; }
 #donatelist { padding: 20px; }
@@ -9676,12 +9674,13 @@ h1 { margin: 0px; height: 91px; }
     </div>
 
     <div class="banner">
-      <div id="coinLogo">
+      <div id="coinLogo" style="visibility: hidden">
         <img id="coinLogoImg" src="logos/bitcoin.png" alt="Universal Open Source Client-Side Wallet Generator" />
       </div>
-      <h1>
+      <h1 style="visibility: hidden">
         <img id="siteTitle" src="images/banner.png" alt="Bitcoin Paper Wallet Generator" />
       </h1>
+      <h1>Tavonni Paper Wallet Generator</h1>
     </div>
 
     <div id="currencyddl" class="hide">
@@ -12498,13 +12497,13 @@ ninja.wallets.paperwallet = {
 		var walletBackgroundUrl = "wallets/" + janin.selectedCurrency.name.toLowerCase() + ".png";
 
 		var walletHtml =
-							"<div class='coinIcoin'> <img id='coinImg' src='" + coinImgUrl + "' alt='currency_logo' /></div><div class='artwallet' id='artwallet" + i + "'>" +
+							"<div class='artwallet' id='artwallet" + i + "'>" +
 								"<img id='papersvg" + i + "' class='papersvg' src='" + walletBackgroundUrl + "' />" +
 								"<div id='qrcode_public" + i + "' class='qrcode_public'></div>" +
 								"<div id='qrcode_private" + i + "' class='qrcode_private'></div>" +
 								"<div class='btcaddress' id='btcaddress" + i + "'></div>" +
 								"<div class='" + keyelement + "' id='" + keyelement + i + "'></div>" +
-								"<div class='paperWalletText'><img class='backLogo' src='" + coinImgUrl + "' alt='currency_logo' />" + ninja.translator.get("paperwalletback") + "</div>" +
+								// "<div class='paperWalletText'><img class='backLogo' src='" + coinImgUrl + "' alt='currency_logo' />" + ninja.translator.get("paperwalletback") + "</div>" +
 							"</div>";
 		return walletHtml;
 	},
